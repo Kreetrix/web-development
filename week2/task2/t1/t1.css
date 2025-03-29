@@ -1,0 +1,88 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  margin: 1rem 0;
+  padding: 0;
+  width: 100%;
+}
+
+li {
+  border: 1px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 3rem;
+  margin-bottom: 0.5rem;
+  padding-right: 2rem;
+  position: relative;
+}
+
+label {
+  display: block;
+  width: 100%;
+  padding-left: 1rem;
+  transition: all 0.3s ease;
+}
+
+li button {
+  width: 2rem;
+  height: 3rem;
+  background-color: rgb(255, 0, 0);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+
+li input {
+  margin: 1rem;
+  cursor: pointer;
+}
+
+li input[type='checkbox']:checked + label {
+  background-color: #90fc03;
+  font-weight: bold;
+}
+
+.add-btn {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background-color: #5050a8;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+dialog {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem;
+  width: 300px;
+}
+
+dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+dialog input {
+  padding: 0.5rem;
+}
+
+dialog button[type='submit'] {
+  padding: 0.5rem;
+  background-color: #5050a8;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
