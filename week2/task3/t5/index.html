@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant App with API</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <h1>Restaurant Finder</h1>
+  <div id="error-container"></div>
+  <div id="loading">Loading restaurants...</div>
+  <div id="restaurant-container" class="restaurant-list"></div>
+
+  <div id="restaurant-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-address"></p>
+      <p id="modal-phone"></p>
+      <p id="modal-email"></p>
+      <h3>Today's Menu</h3>
+      <div id="modal-menu"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
