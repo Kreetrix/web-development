@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   let restaurants = [];
   const url = 'https://media2.edu.metropolia.fi/restaurant'
 
-  // Fetch all restaurants
   async function fetchRestaurants() {
     try {
       const response = await fetch(`${url}/api/v1/restaurants`);
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Fetch daily menu for a specific restaurant
   async function fetchDailyMenu(restaurantId, lang = 'en') {
     try {
       const response = await fetch(`${url}/api/v1/restaurants/daily/${restaurantId}/${lang}`);
@@ -47,7 +45,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Display restaurants in the UI
   function displayRestaurants() {
     restaurantContainer.innerHTML = '';
     restaurants.forEach(restaurant => {
@@ -62,23 +59,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  // Show error message
   function showError(message) {
     errorContainer.innerHTML = `<div class="error">${message}</div>`;
   }
 
-  // Open modal with restaurant details
   async function openModal(restaurant) {
     document.getElementById('modal-title').textContent = restaurant.name;
     document.getElementById('modal-address').textContent = `Address: ${restaurant.address}`;
     document.getElementById('modal-phone').textContent = `Phone: ${restaurant.phone || 'N/A'}`;
     document.getElementById('modal-email').textContent = `Email: ${restaurant.email || 'N/A'}`;
     
-    // Clear previous menu
     const menuContainer = document.getElementById('modal-menu');
     menuContainer.innerHTML = '<p>Loading daily menu...</p>';
     
-    // Fetch and display daily menu
     const dailyMenu = await fetchDailyMenu(restaurant._id, 'en');
     
     if (dailyMenu && dailyMenu.courses) {
@@ -105,12 +98,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     modal.style.display = 'flex';
   }
 
-  // Close modal
   function closeModal() {
     modal.style.display = 'none';
   }
 
-  // Event listeners
   closeBtn.addEventListener('click', closeModal);
   window.addEventListener('click', (event) => {
     if (event.target === modal) {
@@ -118,6 +109,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
-  // Initialize
   fetchRestaurants();
 });
